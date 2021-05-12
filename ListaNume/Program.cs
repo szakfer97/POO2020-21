@@ -12,13 +12,15 @@ namespace ListaNume
         {
             try
             {
-                List<string> values = new List<string>();
-                values.Add("Szakacsi Ferenc-Adam");
-                values.Add("Cristiano Ronaldo");
-                values.Add("Lionel Messi");
-                values.Add("Donald Trump");
-                values.Add("Klaus Iohannis");
-                ListaNume nume = new ListaNume(values);
+                Console.WriteLine("Numele meu este Szakacsi Ferenc-Adam");
+                Console.WriteLine("Acest program ");
+                List<string> valori = new List<string>();
+                valori.Add("Lionel Messi");
+                valori.Add("Cristiano Ronaldo");
+                valori.Add("Joe Biden");
+                valori.Add("Donald Trump");
+                valori.Add("Klaus Iohannis");
+                ListaNume nume = new ListaNume(valori);
                 string n1 = nume[0];
                 Console.WriteLine(n1);
                 string n2 = nume[1];
@@ -41,14 +43,14 @@ namespace ListaNume
     {
         private string[] nume;
         public int dimensiune;
-        public bool err;
-        public ListaNume(List<string> values)
+        public bool er;
+        public ListaNume(List<string> valori)
         {
-            dimensiune = values.Count();
-            nume = new string[values.Count()];
+            dimensiune = valori.Count();
+            nume = new string[valori.Count()];
             for (int i = 0; i < nume.Length; i++)
             {
-                nume[i] = values.ElementAt(i);
+                nume[i] = valori.ElementAt(i);
             }
         }
         public string this[int index]
@@ -57,12 +59,12 @@ namespace ListaNume
             {
                 if (index >= 0 && index < dimensiune)
                 {
-                    err = false;
+                    er = false;
                     return nume[index];
                 }
                 else
                 {
-                    err = true;
+                    er = true;
                     return index + ": Index out of range";
                 }
             }
@@ -71,10 +73,12 @@ namespace ListaNume
                 if (index >= 0 && index < dimensiune)
                 {
                     nume[index] = value;
-                    err = false;
+                    er = false;
                 }
                 else
-                    err = true;
+                {
+                    er = true;
+                }
             }
         }
         public string this[string index]
@@ -88,27 +92,27 @@ namespace ListaNume
                 }
                 catch (FormatException)
                 {
-                    err = true;
+                    er = true;
                     return index + ": Number format exception!";
                 }
                 catch (ArgumentNullException)
                 {
-                    err = true;
+                    er = true;
                     return index + ": Argument Null Exception!";
                 }
                 catch (OverflowException)
                 {
-                    err = true;
+                    er = true;
                     return index + ": Overflow Exception!";
                 }
                 if (i >= 0 && i < dimensiune)
                 {
-                    err = false;
+                    er = false;
                     return nume[i];
                 }
                 else
                 {
-                    err = true;
+                    er = true;
                     return i + ": Index out of range";
                 }
             }
