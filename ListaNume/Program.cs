@@ -10,33 +10,26 @@ namespace ListaNume
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Console.WriteLine("Numele meu este Szakacsi Ferenc-Adam");
-                Console.WriteLine("Acest program ");
-                List<string> valori = new List<string>();
-                valori.Add("Lionel Messi");
-                valori.Add("Cristiano Ronaldo");
-                valori.Add("Joe Biden");
-                valori.Add("Donald Trump");
-                valori.Add("Klaus Iohannis");
-                ListaNume nume = new ListaNume(valori);
-                string n1 = nume[0];
-                Console.WriteLine(n1);
-                string n2 = nume[1];
-                Console.WriteLine(n2);
-                string n3 = nume[2];
-                Console.WriteLine(n3);
-                string n4 = nume[3];
-                Console.WriteLine(n4);
-                string n5 = nume[4];
-                Console.WriteLine(n5);
-                Console.ReadKey();
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine($" {e.Message}");
-            }           
+            Console.WriteLine("Numele meu este Szakacsi Ferenc-Adam");
+            Console.WriteLine("Acest program face o lista cu nume");
+            List<string> valori = new List<string>();
+            valori.Add("Lionel Messi");
+            valori.Add("Cristiano Ronaldo");
+            valori.Add("Joe Biden");
+            valori.Add("Donald Trump");
+            valori.Add("Klaus Iohannis");
+            ListaNume nume = new ListaNume(valori);
+            string n1 = nume[0];
+            Console.WriteLine(n1);
+            string n2 = nume[1];
+            Console.WriteLine(n2);
+            string n3 = nume[2];
+            Console.WriteLine(n3);
+            string n4 = nume[3];
+            Console.WriteLine(n4);
+            string n5 = nume[4];
+            Console.WriteLine(n5);
+            Console.ReadKey();
         }
     }
     public class ListaNume
